@@ -38,7 +38,7 @@ case "$1" in
 
         for STAGE_DIR in "stage"*; do
             echo "- Removing SKIP* file in $STAGE_DIR"
-            rm $STAGE_DIR/SKIP*
+            rm -f $STAGE_DIR/SKIP*
         done
 
         ./build.sh
