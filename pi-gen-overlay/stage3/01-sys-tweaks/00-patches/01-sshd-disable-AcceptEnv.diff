@@ -1,0 +1,11 @@
+--- stage3.orig/rootfs/etc/ssh/sshd_config
++++ stage3/rootfs/etc/ssh/sshd_config
+@@ -110,7 +110,7 @@ PrintMotd no
+ #Banner none
+ 
+ # Allow client to pass locale environment variables
+-AcceptEnv LANG LC_*
++#AcceptEnv LANG LC_*
+ 
+ # override default of no subsystems
+ Subsystem	sftp	/usr/lib/openssh/sftp-server

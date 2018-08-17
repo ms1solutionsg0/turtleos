@@ -1,0 +1,10 @@
+[Match]
+Name=wlan0ext
+
+[Network]
+Address=10.0.0.1/24
+IPv6AcceptRA=no
+LinkLocalAddressing=no
+IPForward=ipv4
+IPMasquerade=yes
+

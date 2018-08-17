@@ -1,0 +1,12 @@
+[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4
+IPv6AcceptRA=no
+LinkLocalAddressing=no
+
+[DHCP]
+RouteMetric=20
+UseDomains=yes
+

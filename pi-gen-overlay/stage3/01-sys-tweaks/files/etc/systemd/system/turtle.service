@@ -1,0 +1,19 @@
+[Unit]
+Description=Turtle test service
+ConditionPathIsMountPoint=/boot/
+ConditionFileNotEmpty=/boot/turtle_config/rover.conf
+
+[Service]
+Type=simple
+EnvironmentFile=/boot/turtle_config/rover.conf
+KillMode=none
+ExecStartPre=/boot/turtle_config/svc/turtle-env.sh
+ExecStart=/usr/bin/whoami
+ExecStop=/usr/bin/whoami
+Restart=on-failure
+RestartSec=4000ms
+
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

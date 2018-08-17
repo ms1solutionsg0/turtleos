@@ -1,0 +1,13 @@
+interface=wlan0ext
+driver=nl80211
+ssid=$ROVER_WLAN_SSID
+hw_mode=g
+channel=$ROVER_WLAN_CHANNEL
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=$ROVER_WLAN_PWD
+wpa_key_mgmt=WPA-PSK
+#wpa_pairwise=TKIP	# You better do not use this weak encryption (only used by old client devices)
+rsn_pairwise=CCMP

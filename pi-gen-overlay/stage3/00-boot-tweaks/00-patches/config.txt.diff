@@ -1,0 +1,11 @@
+--- stage3.orig/rootfs/boot/config.txt
++++ stage3/rootfs/boot/config.txt
+@@ -54,3 +54,8 @@
+ 
+ # Enable audio (loads snd_bcm2835)
+ dtparam=audio=on
++
++enable_uart=1
++dtoverlay=pi3-disable-bt
++disable_splash=1
++gpu_mem=256
