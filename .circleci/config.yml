@@ -8,6 +8,8 @@ jobs:
           ENV: CI
     steps:
       - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
       - run:
           name: Install prerequisites
           command: apt update && apt install -y quilt gparted realpath qemu-user-static zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
