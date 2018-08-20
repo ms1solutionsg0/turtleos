@@ -23,10 +23,37 @@
   <a href="https://www.youtube.com/channel/UCxukvEct3wP0S5FACa3uelA" alt="YouTube">YouTube</a>
 </p>
 
+## Changes
+### Boot tweaks
+ * Patch `cmdline.txt`: disable repair, disable serial0
+ * Patch `config.txt`: enable uart, disable splash
+ * Add `ssh` file by default
+ * Turtle Rover configs
+### System tweaks
+ * Patch sshd to disallow client to pass locale environment variables
+ * Add custom `hostapd.service`
+ * Add `turtle.service`
+ * Install `hostapd`
+ * Install `uv4l` and custom config
+ * ⚠️ **Add `www-data` to `sudoers`**
+### Network tweaks
+ * Patch `hosts`
+ * Add systemd network files. Configure external wifi, internal wifi and ethernet
+ * Add custom `wpa_supplicant-wlan0int.conf`
+ * Add custom `dnsmasq.conf`
+ * Add custom `resolv.conf`
+ * Add custom `sysctl.conf`
+ * Install `dnsmasq`
+ 
+### Install custom software
+ * Install `jq python3-pip wiringpi`
+ * Install [`tcs`](https://github.com/TurtleRover/tcs)
+
 ## How it works
  * [First of read readme from original pi-gen repo](https://github.com/RPi-Distro/pi-gen)
  1. We are removing original `stage3`, `stage4`, `stage5`
  2. Copying our `stage3` which provides all needed changes to run [Turtle Rover](http://turtlerover.com)
+ 3. Run original `build.sh` script
 
 ## How to generate Turtle OS
  * Build all stages `sudo ./prebuild.sh`
