@@ -5,7 +5,7 @@ jobs:
     steps:
       - run:
           name: Install prerequisites
-          command: sudo apt install quilt gparted realpath qemu-user-static erofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
+          command: sudo apt update & sudo apt install quilt gparted realpath qemu-user-static erofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
       - run:
           name: Install debootstrap
           command: |
