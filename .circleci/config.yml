@@ -7,6 +7,7 @@ jobs:
         environment:
           ENV: CI
     steps:
+      - checkout
       - run:
           name: Install prerequisites
           command: apt update && apt install -y quilt gparted realpath qemu-user-static zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
@@ -17,4 +18,4 @@ jobs:
             dpkg --install debootstrap_1.0.78+nmu1ubuntu1_all.deb
       - run:
           name: Build image
-          command: ls -la
+          command:  ls -la
