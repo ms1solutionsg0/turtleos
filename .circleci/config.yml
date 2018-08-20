@@ -17,4 +17,4 @@ jobs:
             dpkg --install debootstrap_1.0.78+nmu1ubuntu1_all.deb
       - run:
           name: Build image
-          command: ./prebuild.sh
+          command: ls -la
