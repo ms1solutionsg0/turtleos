@@ -1,16 +1,18 @@
 version: 2
 jobs:
   build:
-    machine: true
+    # machine: true
+    docker:
+      - image: ubuntu/xenial
     steps:
       - run:
           name: Install prerequisites
-          command: sudo apt update && sudo apt install quilt gparted realpath qemu-user-static zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
+          command: apt update && apt install quilt gparted realpath qemu-user-static zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
       - run:
           name: Install debootstrap
           command: |
             wget "http://archive.ubuntu.com/ubuntu/pool/main/d/debootstrap/debootstrap_1.0.78+nmu1ubuntu1_all.deb"
-            sudo dpkg --install debootstrap_1.0.78+nmu1ubuntu1_all.deb
+            dpkg --install debootstrap_1.0.78+nmu1ubuntu1_all.deb
       - run:
           name: Build image
-          command: sudo sh ./prebuild.sh
+          command: ./prebuild.sh
