@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
           name: Install prerequisites
-          command: apt update && apt install quilt gparted realpath qemu-user-static zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
+          command: apt update && apt install -y quilt gparted realpath qemu-user-static zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
       - run:
           name: Install debootstrap
           command: |
