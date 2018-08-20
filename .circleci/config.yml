@@ -1,12 +1,11 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: ubuntu:xenial
+    machine: true
     steps:
       - run:
           name: Install prerequisites
-          command: apt install quilt parted realpath qemu-user-static erofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
+          command: apt install quilt gparted realpath qemu-user-static erofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils
       - run:
           name: Install debootstrap
           command: |
