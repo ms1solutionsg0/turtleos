@@ -1,4 +1,8 @@
 #!/bin/bash -e
+on_chroot <<-EOF
+sudo apt-get install -y jq python3-pip wiringpi
+EOF
+
 
 on_chroot <<-EOF
     echo "=> Retrieving latest TCS..."
