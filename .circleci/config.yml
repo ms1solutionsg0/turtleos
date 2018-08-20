@@ -4,8 +4,8 @@ jobs:
     # machine: true
     docker:
       - image: buildpack-deps:xenial # primary container
-          environment:
-            ENV: CI
+        environment:
+          ENV: CI
     steps:
       - run:
           name: Install prerequisites
