@@ -3,7 +3,9 @@ jobs:
   build:
     # machine: true
     docker:
-      - image: ubuntu/xenial
+      - image: buildpack-deps:xenial # primary container
+          environment:
+            ENV: CI
     steps:
       - run:
           name: Install prerequisites
