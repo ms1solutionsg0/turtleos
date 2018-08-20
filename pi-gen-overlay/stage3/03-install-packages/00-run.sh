@@ -1,6 +1,6 @@
 #!/bin/bash -e
 on_chroot <<-EOF
-sudo apt-get install -y jq python3-pip wiringpi
+sudo apt-get update && sudo apt-get install -y jq python3-pip wiringpi
 EOF
 
 
