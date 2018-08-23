@@ -24,11 +24,13 @@ script:
 before_deploy:
   # Workaround for https://github.com/travis-ci/dpl/issues/542
   - sudo chown $(id -u) build/deploy/*.zip
-# deploy:
-#   provider: releases
-#   api_key:
-#   file: build/deploy/*.zip
-#   file_glob: true
-#   skip_cleanup: true
-#   on:
-#     tags: true
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: build/deploy/*.zip
+  file_glob: true
+  skip_cleanup: true
+  name: $TRAVIS_TAG
+  on:
+    branch: master
+    tags: true
