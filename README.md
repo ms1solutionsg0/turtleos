@@ -39,7 +39,7 @@
 ### Network tweaks
  * Patch `hosts`
  * Add systemd network files
-    * External wifi interface (hotspot) `wlan0ext`, ip:`10.0.0.1`, default SSID: `TurtleRover-XXYYY`, password: `password123`
+    * External wifi interface (hotspot) `wlan0ext`, ip:`10.0.0.1`, default SSID: `TurtleRover-XXYYY`, password: `password`
     * Internal wifi interface `wlan0int`
  * Add custom `wpa_supplicant-wlan0int.conf`
  * Add custom `dnsmasq.conf`
