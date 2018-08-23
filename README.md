@@ -43,7 +43,7 @@
     * Internal wifi interface `wlan0int`
  * Add custom `wpa_supplicant-wlan0int.conf`
  * Add custom `dnsmasq.conf`
- * Add custom `resolv.conf`
+ * Add custom `resolvconf.conf`
  * Add custom `sysctl.conf`
  * Install `dnsmasq`
 
