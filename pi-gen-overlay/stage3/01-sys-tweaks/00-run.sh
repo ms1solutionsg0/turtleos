@@ -17,14 +17,6 @@ on_chroot <<-EOF
     apt-get -y install uv4l uv4l-raspicam-extras uv4l-server uv4l-uvc uv4l-webrtc
 EOF
 
-echo "=>Performing enabling/disabling of services"
-on_chroot <<-EOF
-    systemctl disable dhcpcd
-    systemctl enable systemd-networkd
-    systemctl enable turtle
-    systemctl enable hostapd
-EOF
-
 # Well, that's a security breach
 on_chroot <<-EOF
     echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
