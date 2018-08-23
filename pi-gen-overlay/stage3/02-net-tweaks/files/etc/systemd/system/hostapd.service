@@ -18,7 +18,7 @@ After=sys-subsystem-net-devices-wlan0ext.device
 
 Restart=on-failure
 RestartSec=10
-EnvironmentFile=/boot/turtle_config/rover.conf
+EnvironmentFile=
 Type=simple
 
 TimeoutSec=5min

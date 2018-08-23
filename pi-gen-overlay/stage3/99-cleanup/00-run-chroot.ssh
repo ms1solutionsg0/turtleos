@@ -1,0 +1,2 @@
+apt-get clean
+rm -rf /home/travis
