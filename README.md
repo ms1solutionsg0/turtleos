@@ -47,9 +47,8 @@
  * Add custom `sysctl.conf`
  * Install `dnsmasq`
 
-### Install custom software
- * Install `jq python3-pip wiringpi`
- * Install [`tcs`](https://github.com/TurtleRover/tcs)
+### Custom software
+ * [Turtle Control Software](https://github.com/TurtleRover/tcs)
 
 ## How it works
  * [First of read readme from original pi-gen repo](https://github.com/RPi-Distro/pi-gen)
