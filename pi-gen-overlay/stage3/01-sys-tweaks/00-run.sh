@@ -2,8 +2,6 @@
 
 install -m 644 files/etc/apt/sources.list.d/*.list "$ROOTFS_DIR"/etc/apt/sources.list.d/
 
-install -v -m 644 files/etc/systemd/system/*.service	"${ROOTFS_DIR}/etc/systemd/system/"
-
 on_chroot <<-EOF
 	curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | apt-key add -
 EOF
@@ -32,5 +30,4 @@ on_chroot <<-EOF
     echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 EOF
 
-install -v -m 644 files/etc/udev/rules.d/*.rules	"${ROOTFS_DIR}/etc/udev/rules.d/"
 install -v -m 644 files/etc/uv4l/*.conf	"${ROOTFS_DIR}/etc/uv4l/"
