@@ -23,6 +23,9 @@
   <a href="https://www.youtube.com/channel/UCxukvEct3wP0S5FACa3uelA" alt="YouTube">YouTube</a>
 </p>
 
+## How to install
+Installation procedure is the same as for original Raspbian image which is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
+
 ## Modifications in this image
 ### Boot tweaks
  * Patch `cmdline.txt`: disable repair, disable serial0
