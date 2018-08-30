@@ -28,6 +28,7 @@ Installation procedure is the same as for original Raspbian image which is descr
 
 ## How to configure
  * To change HotSpot name (SSID), change `/etc/hostapd/hostapd.conf` file. e.g. using nano `sudo nano /etc/hostapd/hostapd.conf`
+ * Works best with RT5370 WiFi adapter, or any that uses `rt2800usb` driver
 
 ## Modifications in this image
 ### Boot tweaks
