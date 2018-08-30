@@ -26,6 +26,9 @@
 ## How to install
 Installation procedure is the same as for original Raspbian image which is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
 
+## How to configure
+ * To change HotSpot name (SSID), change `/etc/hostapd/hostapd.conf` file. e.g. using nano `sudo nano /etc/hostapd/hostapd.conf`
+
 ## Modifications in this image
 ### Boot tweaks
  * Patch `cmdline.txt`: disable repair, disable serial0
