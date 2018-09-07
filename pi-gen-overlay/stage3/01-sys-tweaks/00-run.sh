@@ -17,9 +17,4 @@ on_chroot <<-EOF
     apt-get -y install uv4l uv4l-raspicam-extras uv4l-server uv4l-uvc uv4l-webrtc
 EOF
 
-# Well, that's a security breach
-on_chroot <<-EOF
-    echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-EOF
-
 install -v -m 644 files/etc/uv4l/*.conf	"${ROOTFS_DIR}/etc/uv4l/"
