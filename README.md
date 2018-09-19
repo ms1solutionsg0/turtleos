@@ -90,5 +90,10 @@ We are using identical login: `pi` and password: `raspberry`, as official Raspbi
  * Build all stages `sudo ./prebuild.sh`
  * Build only stage3 `sudo ./prebuild.sh -s`
 
+## How to add and edit patches
+ * [Using Quilt](https://wiki.debian.org/UsingQuilt)
+ * [Quilt Tutorial](http://www.shakthimaan.com/downloads/glv/quilt-tutorial/quilt-doc.pdf)
+
+
 ---
 Strongly inspired by 🤡 [BigClown Raspbian](https://github.com/bigclownlabs/bc-raspbian) 🤡
