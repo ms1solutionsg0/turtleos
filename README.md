@@ -38,7 +38,6 @@ Installation procedure is the same as for original Raspbian image which is descr
  * Add `turtle.service`
  * Install `hostapd`
  * Install `uv4l` and custom config
- * ⚠️ **Add `www-data` to `sudoers`**
 ### Network tweaks
  * Patch `hosts`
  * Add systemd network files
