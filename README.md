@@ -26,6 +26,33 @@
 ## How to install
 Installation procedure is the same as for original Raspbian image which is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
 
+## How to connect via SSH
+### SSH using Linux or Mac OS
+You will need to know your Raspberry Pi's IP address to connect to it. If You're connecting using Turtle Acess Point **Turtle-XXYYY** the adress is static: `10.0.0.1`. You can also connect using Ethernet cable. In this case You have to set in IPv4 settings of Ethernet connection to **Share with other computers** on Your computer. Then, using e.g. `arp`, find address. It usually starts with `10.x.x.x` and is dynamic.
+
+To connect to your Pi from a different computer, copy and paste the following command into the terminal window but replace <IP> with the IP address of the Raspberry Pi. Use Ctrl + Shift + V to paste in the terminal.
+  
+`ssh pi@<IP>`
+
+If you receive a connection timed out error it is likely that you have entered the wrong IP address for the Raspberry Pi.
+
+When the connection works you will see a security/authenticity warning. Type **yes** to continue. You will only see this warning the first time you connect.
+
+In the event your Pi has taken the IP address of a device to which your computer has connected before (even if this was on another network), you may be given a warning and asked to clear the record from your list of known devices. Following this instruction and trying the ssh command again should be successful.
+
+Next you will be prompted for the password. We are using identical login: `pi` and password: `raspberry`, as official Raspbian.
+
+_Source: [www.raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md)_
+
+### SSH using Windows
+For Windows You can follow this [official steps](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md).
+If You're connecting using Turtle Acess Point **Turtle-XXYYY** the adress is static: `10.0.0.1`. 
+We are using identical login: `pi` and password: `raspberry`, as official Raspbian.
+
+## How to configure
+ * To change HotSpot name (SSID), change `/etc/hostapd/hostapd.conf` file. e.g. using nano `sudo nano /etc/hostapd/hostapd.conf`
+ * Works best with RT5370 WiFi adapter, or any that uses `rt2800usb` driver
+
 ## Modifications in this image
 ### Boot tweaks
  * Patch `cmdline.txt`: disable repair, disable serial0
@@ -61,6 +88,11 @@ Installation procedure is the same as for original Raspbian image which is descr
 ## How to generate Turtle OS
  * Build all stages `sudo ./prebuild.sh`
  * Build only stage3 `sudo ./prebuild.sh -s`
+
+## How to add and edit patches
+ * [Using Quilt](https://wiki.debian.org/UsingQuilt)
+ * [Quilt Tutorial](http://www.shakthimaan.com/downloads/glv/quilt-tutorial/quilt-doc.pdf)
+
 
 ---
 Strongly inspired by 🤡 [BigClown Raspbian](https://github.com/bigclownlabs/bc-raspbian) 🤡
