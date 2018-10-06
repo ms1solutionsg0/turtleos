@@ -1,9 +1,15 @@
 #!/bin/bash -e
 
+sgr() {
+    local codes=${1:-0}; shift
+    for c in "$@"; do codes="$codes;$c"; done
+    echo -n -e "\e[${codes}m"
+}
 # Font styles
-GREEN="\e[1;38;5;40m"
-BOLD="\e[1m"
-RST="\e[0m"
+BOLD=$(sgr 1)
+RED=$(sgr 31)
+GREEN=$(sgr 38 5 2)
+RST=$(sgr 0)
 
 export IMG_NAME='turtleos'
 export DEBIAN_FRONTEND='noninteractive'
@@ -27,7 +33,7 @@ merge () {
 
 case "$1" in
     -s) echo -e "$BOLD Performing build of $GREEN$IMG_NAME$RST..."
-        echo -e "$BOLD Skipping all stages except stage3$RST"
+        echo -e " Skipping all stages except stage3"
 
         merge
 
@@ -38,12 +44,12 @@ case "$1" in
             fi
         done
         echo -en " "
-        for i in {76..81} {81..76} ; do echo -en "\e[38;5;${i}m#\e[0m" ; done ; echo
+        echo "-------------------------"
 
         CLEAN=1 ./build.sh
         ;;
     *) echo -e "$BOLD Performing build of $GREEN$IMG_NAME$RST..."
-       echo -e "$BOLD Building all stages except$RST"
+       echo -e "$BOLD Building all stages$RST"
 
         merge
 
