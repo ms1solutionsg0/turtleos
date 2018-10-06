@@ -50,7 +50,7 @@ If You're connecting using Turtle Acess Point **Turtle-XXYYY** the adress is sta
 We are using identical login: `pi` and password: `raspberry`, as official Raspbian.
 
 ## How to configure
- * To change HotSpot name (SSID), change `/etc/hostapd/hostapd.conf` file. e.g. using nano `sudo nano /etc/hostapd/hostapd.conf`
+ * To change HotSpot name (SSID), passphrase, channel, etc. change `/etc/hostapd/hostapd.conf` file. e.g. using nano `sudo nano /etc/hostapd/hostapd.conf`
  * Works best with RT5370 WiFi adapter, or any that uses `rt2800usb` driver
 
 ## Modifications in this image
