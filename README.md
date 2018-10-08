@@ -31,7 +31,7 @@ Installation procedure is the same as for original Raspbian image which is descr
 You will need to know your Raspberry Pi's IP address to connect to it. If You're connecting using Turtle Acess Point **Turtle-XXYYY** the adress is static: `10.0.0.1`. You can also connect using Ethernet cable. In this case You have to set in IPv4 settings of Ethernet connection to **Share with other computers** on Your computer. Then, using e.g. `arp`, find address. It usually starts with `10.x.x.x` and is dynamic.
 
 To connect to your Pi from a different computer, copy and paste the following command into the terminal window but replace <IP> with the IP address of the Raspberry Pi. Use Ctrl + Shift + V to paste in the terminal.
-  
+
 `ssh pi@<IP>`
 
 If you receive a connection timed out error it is likely that you have entered the wrong IP address for the Raspberry Pi.
@@ -46,7 +46,7 @@ _Source: [www.raspberrypi.org](https://www.raspberrypi.org/documentation/remote-
 
 ### SSH using Windows
 For Windows You can follow this [official steps](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md).
-If You're connecting using Turtle Acess Point **Turtle-XXYYY** the adress is static: `10.0.0.1`. 
+If You're connecting using Turtle Acess Point **Turtle-XXYYY** the adress is static: `10.0.0.1`.
 We are using identical login: `pi` and password: `raspberry`, as official Raspbian.
 
 ## How to configure
@@ -86,6 +86,7 @@ We are using identical login: `pi` and password: `raspberry`, as official Raspbi
  3. Build image
 
 ## How to generate Turtle OS
+ * To download files from Github with no limit you need [Github token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), place `GITHUB_TOKEN` file with content `GITHUB_TOKEN=...` in project root
  * Build all stages `sudo ./prebuild.sh`
  * Build only stage3 `sudo ./prebuild.sh -s`
 
