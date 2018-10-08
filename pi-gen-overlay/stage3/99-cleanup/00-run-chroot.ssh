@@ -1,2 +1,3 @@
 apt-get clean
 rm -rf /home/travis
+rm -rf /tmp/install

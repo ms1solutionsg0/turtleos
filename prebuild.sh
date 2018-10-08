@@ -19,6 +19,11 @@ if [ -n "${TRAVIS_TAG:-}" ]; then
 	export IMG_DATE="$TRAVIS_TAG"
 fi
 
+if ! [ -n "${GITHUB_TOKEN:-}" ]; then
+    . GITHUB_TOKEN
+    export GITHUB_TOKEN="$GITHUB_TOKEN"
+fi
+
 cd "$(dirname "$0")"
 mkdir -p build
 cd build
