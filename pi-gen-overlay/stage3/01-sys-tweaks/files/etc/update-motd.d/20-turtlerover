@@ -11,11 +11,12 @@ sgr() {
 BOLD=$(sgr 1)
 RED=$(sgr 31)
 GREEN=$(sgr 38 5 2)
+GREY=$(sgr 38 5 8)
 RST=$(sgr 0)
 
 . /etc/turtleos_version
-TNAME=$NAME
-TVERSION=$VERSION
+TPRETTY_NAME=$PRETTY_NAME
+TBUILD=$BUILD_ID
 
 . /etc/os-release
 DNAME=$NAME
@@ -24,11 +25,11 @@ DVERSION=$VERSION
 UPTIME=$(uptime -p)
 DATE=$(date +'%a %d %b %Y %T %Z')
 
-clear
+# clear
 echo -e "               ------------------------------"
 echo -e "               $(uname -rms) "
-echo -e "$BOLD$GREEN $TNAME $TVERSION $RST $DNAME $DVERSION"
-echo -e "               ------------------------------"
+echo -e "$BOLD$GREEN $TPRETTY_NAME $RST $DNAME $DVERSION"
+echo -e "     $GREY$TBUILD$RST  ------------------------------"
 echo -e "               🕑 $DATE"
 echo -e "               $UPTIME"
 echo -e "              $GREEN Turtle Control Software $(tcs -v)$RST"
