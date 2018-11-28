@@ -2,7 +2,7 @@
   <a href="http://turtlerover.com" alt="Turtle Rover"><img src="https://avatars3.githubusercontent.com/u/36553642?s=84&v=4" alt="Turtle Rover" /></a>
 </p>
 <h1 align="center">Turtle OS</h1>
-<h4 align="center">Modificated Raspbian Lite</h4>
+<h4 align="center">Modified Raspbian Lite</h4>
 
 <p align="center">
   <a href="https://travis-ci.org/TurtleRover/turtleos">
