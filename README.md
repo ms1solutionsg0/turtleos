@@ -85,6 +85,7 @@ We are using identical login: `pi` and password: `raspberry`, as official Raspbi
 
 ### Custom software
  * [Turtle Control Software](https://github.com/TurtleRover/tcs)
+ * [OpenOCD](https://github.com/TurtleRover/openocd)
 
 ## How it works
  * [First of read readme from original pi-gen repo](https://github.com/RPi-Distro/pi-gen)
