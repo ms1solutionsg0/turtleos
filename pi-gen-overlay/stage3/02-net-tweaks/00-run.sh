@@ -9,9 +9,12 @@ install -v -m 644 files/etc/systemd/system/*.service	"${ROOTFS_DIR}/etc/systemd/
 
 install -v -m 644 files/etc/udev/rules.d/*.rules	"${ROOTFS_DIR}/etc/udev/rules.d/"
 
+install -v -m 644 files/etc/NetworkManager/NetworkManager.conf	"${ROOTFS_DIR}/etc/NetworkManager/"
+
 echo "=>Performing enabling/disabling of services"
 on_chroot <<-EOF
     systemctl disable dhcpcd
     systemctl enable systemd-networkd
     systemctl enable hostapd
+    systemctl enable NetworkManager
 EOF
