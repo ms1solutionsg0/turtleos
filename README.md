@@ -64,6 +64,7 @@ We are using identical login: `pi` and password: `raspberry`, as official Raspbi
  * Add `turtle.service`
  * Install `uv4l` and custom config
  * Install `rng-tools` to feed hwrng into /dev/random
+ * Install `vim` and `tmux`
 ### Network tweaks
  * Patch `hosts`
  * Add udev rules for network interface names
