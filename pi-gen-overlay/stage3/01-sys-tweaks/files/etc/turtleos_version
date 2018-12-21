@@ -1,8 +1,8 @@
 NAME=TurtleOS
-VERSION="1.1"
+VERSION="1.2"
 ID=turtleos
-VERSION_ID=1.1
-PRETTY_NAME="TurtleOS 1.1"
+VERSION_ID=1.2
+PRETTY_NAME="TurtleOS 1.2"
 HOME_URL="https://github.com/TurtleRover/turtleos"
 BUG_REPORT_URL="https://github.com/TurtleRover/turtleos/issues"
 BUILD_ID=

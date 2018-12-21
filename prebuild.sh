@@ -11,13 +11,18 @@ RED=$(sgr 31)
 GREEN=$(sgr 38 5 2)
 RST=$(sgr 0)
 
-export IMG_NAME='turtleos'
+export IMG_NAME='TurtleOS'
+export IMG_DATE="$(date +%Y%m%d)"
 export DEBIAN_FRONTEND='noninteractive'
 export LC_ALL='C.UTF-8'
 
 if [ -n "${TRAVIS_TAG:-}" ]; then
-	export IMG_DATE="$TRAVIS_TAG"
+    export IMG_FILENAME="${IMG_NAME}-${TRAVIS_TAG}-${IMG_DATE}"
+else
+    export IMG_FILENAME="${IMG_NAME}-${IMG_DATE}"
 fi
+
+export ZIP_FILENAME=$IMG_FILENAME
 
 if ! [ -n "${GITHUB_TOKEN:-}" ]; then
     . GITHUB_TOKEN
