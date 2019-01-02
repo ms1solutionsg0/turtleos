@@ -2,7 +2,10 @@
 
 install -v -m 644 files/etc/apt/sources.list.d/ros-latest.list "$ROOTFS_DIR"/etc/apt/sources.list.d/ros-latest.list
 
+mkdir -p "$ROOTFS_DIR"/tmp/install
+wget https://github.com/ros/rosdistro/raw/master/ros.key -O "$ROOTFS_DIR"/tmp/install/ros.key
+
 on_chroot <<-EOF
-    apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+    apt-key add /tmp/install/ros.key
     apt-get update
 EOF
