@@ -14,7 +14,7 @@ tar -xf "$ROOTFS_DIR"/tmp/install/ros.tar -C "$ROOTFS_DIR"/opt/ros/kinetic
 
 on_chroot <<-EOF
     rosdep init
-    rosdep update
+    su pi -c "rosdep update"
     
-    rosdep install --from-paths /opt/ros/kinetic/share --ignore-src --rosdistro kinetic -y --os=debian:stretch
+    su pi -c "rosdep install --from-paths /opt/ros/kinetic/share --ignore-src --rosdistro kinetic -y --os=debian:stretch"
 EOF
