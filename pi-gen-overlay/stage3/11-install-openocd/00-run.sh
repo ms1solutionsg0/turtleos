@@ -1,10 +1,8 @@
 #!/bin/bash -e
 
-echo "=> Retrieving latest OpenOCD..."
+echo "=> Retrieving OpenOCD..."
 
-URL=$(curl -sS --header "Authorization: token $GITHUB_TOKEN" \
-     --header 'Accept: application/vnd.github.v3.raw' \
-     https://api.github.com/repos/TurtleRover/turtleos-openocd/releases/latest | jq -r '.assets[0].browser_download_url')
+URL="https://github.com/TurtleRover/turtleos-openocd/releases/download/0.10.0-5/turtlerover-openocd_0.10.0-5_armhf.deb"
 
 curl -L $URL --output "$ROOTFS_DIR"/tmp/install/openocd.deb
 

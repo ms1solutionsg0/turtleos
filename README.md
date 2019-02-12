@@ -96,7 +96,6 @@ We are using identical login: `pi` and password: `raspberry`, as official Raspbi
  3. Build image
 
 ## How to generate Turtle OS
- * To download files from Github with no limit you need [Github token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), place `GITHUB_TOKEN` file with content `GITHUB_TOKEN=...` in project root
  * Build all stages `sudo ./prebuild.sh`
  * Build only stage3 `sudo ./prebuild.sh -s`
 

@@ -24,11 +24,6 @@ fi
 
 export ZIP_FILENAME=$IMG_FILENAME
 
-if ! [ -n "${GITHUB_TOKEN:-}" ]; then
-    . GITHUB_TOKEN
-    export GITHUB_TOKEN="$GITHUB_TOKEN"
-fi
-
 cd "$(dirname "$0")"
 mkdir -p build
 cd build
