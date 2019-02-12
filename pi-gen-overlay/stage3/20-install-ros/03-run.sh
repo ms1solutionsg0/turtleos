@@ -1,16 +1,16 @@
 #!/bin/bash -e
 
-echo "=> Retrieving latest ROS..."
+echo "=> Retrieving prebuilt ROS packages..."
 
-URL=$(curl -sS --header "Authorization: token $GITHUB_TOKEN" \
-     --header 'Accept: application/vnd.github.v3.raw' \
-     https://api.github.com/repos/TurtleRover/turtleos-ros/releases/latest | jq -r '.assets[0].browser_download_url')
+URL="https://github.com/TurtleRover/turtleos-ros/releases/download/0.2/2019-02-12-ROS.tar"
 
 mkdir -p "$ROOTFS_DIR"/tmp/install
 curl -L $URL --output "$ROOTFS_DIR"/tmp/install/ros.tar
 
 mkdir -p "$ROOTFS_DIR"/opt/ros/kinetic
 tar -xf "$ROOTFS_DIR"/tmp/install/ros.tar -C "$ROOTFS_DIR"/opt/ros/kinetic
+
+echo "=> Retrieving system dependencies..."
 
 on_chroot <<-EOF
     rosdep init
