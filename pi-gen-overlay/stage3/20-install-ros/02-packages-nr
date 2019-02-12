@@ -1,1 +1,1 @@
-python-rosdep
+python-rosdep python-catkin-tools
