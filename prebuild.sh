@@ -16,18 +16,13 @@ export IMG_DATE="$(date +%Y%m%d)"
 export DEBIAN_FRONTEND='noninteractive'
 export LC_ALL='C.UTF-8'
 
-if [ -n "${TRAVIS_TAG:-}" ]; then
-    export IMG_FILENAME="${IMG_NAME}-${TRAVIS_TAG}-${IMG_DATE}"
+if [ -n "${GIT_TAG:-}" ]; then
+    export IMG_FILENAME="${IMG_NAME}-${GIT_TAG}-${IMG_DATE}"
 else
     export IMG_FILENAME="${IMG_NAME}-${IMG_DATE}"
 fi
 
 export ZIP_FILENAME=$IMG_FILENAME
-
-if ! [ -n "${GITHUB_TOKEN:-}" ]; then
-    . GITHUB_TOKEN
-    export GITHUB_TOKEN="$GITHUB_TOKEN"
-fi
 
 cd "$(dirname "$0")"
 mkdir -p build
