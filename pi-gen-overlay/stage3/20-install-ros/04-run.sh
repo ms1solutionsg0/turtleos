@@ -26,4 +26,4 @@ on_chroot <<-EOF
     cd /tmp/install/ros_ws
     catkin config --extend /opt/ros/kinetic --install -i /opt/ros/turtle
     catkin build
-EOF 
+EOF
