@@ -1,7 +1,5 @@
 # How to Install
-
 **TurtleOS has a `prebuild.sh` script that won't work**
-
 ## Real Steps
 1. Make sure to clone repo with `git clone _repo_ --recursive` in order to copy the `pi-gen` folder
 2. Clone the `pi-gen` repo into separate directory for later
@@ -30,3 +28,18 @@ The `.deb` is hardcoded into `stage3/10-install-tcs/00-run.sh`
 2. Copy the link for the `.deb` deployment you want
 3. Replace the `URL` in the above file with your new URL
 4. Re-run the `./build-docker` script
+
+
+## Configuration
+This is the base image for TurtleRover. Multiple configurations can be set before the image creation that should be done carefully before multiple SD cards are written.
+
+### Wifi
+Modify the SSID and password at 
+`pi-gen-overlay/stage3/02-net-tweaks/files/etc/hostapd/hostapd.conf`
+
+### uv4l
+`pi-gen-overlay/stage3/01-sys-tweaks/files/etc/uv4l/uv4l-uvc.conf`
+
+### TCS version
+Update with correct path at 
+`pi-gen-overlay/stage3/10-install-tcs/00-run.sh`
